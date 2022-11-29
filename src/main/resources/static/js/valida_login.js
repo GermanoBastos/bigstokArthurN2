@@ -5,7 +5,7 @@ function logar() {
   var senha = document.getElementById("senha").value;
 
   if (login == "admin" && senha == "admin") {
-    window.location.href='CadUsuarios.html';
+    window.location.href='produtos';
   } else {
     alert("Usuário ou senha incorretos");
   }
