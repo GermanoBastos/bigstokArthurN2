@@ -1,5 +1,6 @@
 package com.bigstok.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -11,6 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bigstok.models.Produto;
 import com.bigstok.repository.ProdutoRepository;
@@ -71,6 +73,7 @@ public class ProdutoController {
 	// =============================================================================================================//
 
 	// lista todos os produtos na tabela
+	
 	@GetMapping("/produtos")
 	public String mostrarTabelaProdutos(Model model) {
 		List<Produto> produtos = produtoRepository.findAll();
@@ -86,6 +89,11 @@ public class ProdutoController {
 		return "index";
 	}
 	
+
+	
+		
+
+
 
 
 

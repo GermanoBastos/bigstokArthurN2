@@ -97,7 +97,7 @@
                         <div class="my-2 col-lg-12 col-xl-6">
                             <label class="form-label"><span class="obrigatorio">*</span> Produto:</label>
                             <input class="form-control form-control-sm" type="text" th:field="*{produtoNome}"
-                                name="produtoNome">
+                                name="produtoNome" required>
                         </div>
 
                         <div class="my-2  col-lg-6 col-xl-3">
@@ -108,7 +108,7 @@
                         <div class="my-2  col-lg-6 col-xl-3">
                             <label class="form-label"><span class="obrigatorio">*</span> Data do cadastro:</label>
                             <input class="form-control form-control-sm" type="date" th:field="*{dataCadastro}"
-                                name="dataCadastro">
+                                name="dataCadastro" required>
                         </div>
 
                     </div>
@@ -118,7 +118,7 @@
                         <div class="my-2 col-md-6 col-lg-6 col-xl-3">
                             <label class="form-label"><span class="obrigatorio">*</span> Categoria:</label>
                             <select class="form-select form-select-sm" th:field="*{categoria}" name="categoria"
-                                aria-label="Default select example">
+                                aria-label="Default select example" required>
                                 <option value="Medicamento">Medicamento</option>
                                 <option value="Material de escritório">Material de escritório</option>
                                 <option value="Material de limpeza">Material de limpeza</option>
@@ -128,7 +128,7 @@
                         <div class="my-2  col-lg-6 col-xl-3">
                             <label class="form-label"><span class="obrigatorio">*</span> Quantidade:</label>
                             <input class="form-control form-control-sm" type="number" th:field="*{qtdProduto}"
-                                name="qtdProduto">
+                                name="qtdProduto" required>
                         </div>
                         <div class="my-2  col-lg-6 col-xl-3">
                             <label class="form-label">Código de barras:</label>
@@ -139,7 +139,7 @@
                         <div class="my-2 col-md-6 col-lg-6 col-xl-3">
                             <label class="form-label"><span class="obrigatorio">*</span> Incluido por:</label>
                             <select class="form-select form-select-sm " name="incluidoPor" th:field="*{incluidoPor}"
-                                aria-label="Default select example">
+                                aria-label="Default select example" required>
                                 <option value="Germano">Germano</option>
                                 <option value="Luana">Luana</option>
                                 <option value="Marconi">Marconi</option>
@@ -154,7 +154,7 @@
                         <div class="my-2 col-md-6 col-lg-6 col-xl-3">
                             <label class="form-label"><span class="obrigatorio">*</span> Unidade:</label>
                             <select class=" form-select form-select-sm " name="unidade" th:field="*{unidade}"
-                                aria-label="Default select example">
+                                aria-label="Default select example" required>
                                 <option value=""></option>
                                 <option value="UN">UN</option>
                                 <option value="CX">CX</option>

@@ -81,15 +81,6 @@ public class FornecedorController {
 
 	// =============================================================================================================//
 
-	// rota para exibir pagina de login
-	// @GetMapping("/")
-	// public String login() {
-	// 	return "index";
-	// }
-
-	// @GetMapping("/fornecedor")
-	// public String fornecedor() {
-	// 	return "CadFornecedores";
-	// }
+	
 
 }

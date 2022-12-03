@@ -43,14 +43,18 @@
                             <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                                 aria-expanded="false">Cadastros</a>
                             <ul class="dropdown-menu text-center">
-                                <li><a class="dropdown-item" th:href="@{/fornecedores}" href="CadFornecedores.html">Fornecedores</a></li>
-                                <li><a class="dropdown-item" th:href="@{/produtos}" href="CadProdutos.html">Produtos</a></li>
-                                <li><a class="dropdown-item" th:href="@{/usuarios}" href="CadUsuarios.html">Usuários</a></li>
+                                <li><a class="dropdown-item" th:href="@{/fornecedores}"
+                                        href="CadFornecedores.html">Fornecedores</a></li>
+                                <li><a class="dropdown-item" th:href="@{/produtos}" href="CadProdutos.html">Produtos</a>
+                                </li>
+                                <li><a class="dropdown-item" th:href="@{/usuarios}" href="CadUsuarios.html">Usuários</a>
+                                </li>
                             </ul>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" th:href="@{/produtos}" href="CadProdutos.html">Entrada de
+                            <a class="nav-link active" aria-current="page" th:href="@{/produtos}"
+                                href="CadProdutos.html">Entrada de
                                 produtos</a>
                         </li>
                         <li class="nav-item">
@@ -74,7 +78,7 @@
         <div class="container conForms">
             <div class="formulario">
 
-                <form class="form-geral col-lg-12" method="POST" action="/cadastarProd">
+                <form class="form-geral col-lg-12" method="POST" action="/cadastraProd">
 
                     <!-- Título do formulário  -->
                     <h1 class="header-form text-center titlepage ">Cadastro de Produtos</h1>
@@ -85,7 +89,7 @@
                     <div class=" row">
                         <div class="my-2 col-lg-12 col-xl-6">
                             <label class="form-label"><span class="obrigatorio">*</span> Produto:</label>
-                            <input class="form-control form-control-sm" type="text" name="produtoNome">
+                            <input class="form-control form-control-sm" type="text" name="produtoNome" required>
                         </div>
 
                         <div class="my-2  col-lg-6 col-xl-3">
@@ -95,7 +99,7 @@
 
                         <div class="my-2  col-lg-6 col-xl-3">
                             <label class="form-label"><span class="obrigatorio">*</span> Data do cadastro:</label>
-                            <input class="form-control form-control-sm" type="date" name="dataCadastro">
+                            <input class="form-control form-control-sm" type="date" name="dataCadastro" required>
                         </div>
 
                     </div>
@@ -105,7 +109,7 @@
                         <div class="my-2 col-md-6 col-lg-6 col-xl-3">
                             <label class="form-label"><span class="obrigatorio">*</span> Categoria:</label>
                             <select class="form-select form-select-sm" name="categoria"
-                                aria-label="Default select example">
+                                aria-label="Default select example" required>
                                 <option value=""></option>
                                 <option value="Medicamento">Medicamento</option>
                                 <option value="Medicamento">Insumo Hospitalar</option>
@@ -116,12 +120,12 @@
                         </div>
                         <div class="my-2  col-md-6 col-lg-6 col-xl-3">
                             <label class="form-label"><span class="obrigatorio">*</span> Quantidade:</label>
-                            <input class="form-control form-control-sm" type="number" name="qtdProduto">
+                            <input class="form-control form-control-sm" type="number" name="qtdProduto" required>
                         </div>
                         <div class="my-2 col-md-6 col-lg-6 col-xl-3">
                             <label class="form-label"><span class="obrigatorio">*</span> Unidade:</label>
                             <select class=" form-select form-select-sm " name="unidade"
-                                aria-label="Default select example">
+                                aria-label="Default select example" required>
                                 <option value=""></option>
                                 <option value="UN">UN</option>
                                 <option value="CX">CX</option>
@@ -133,7 +137,7 @@
                         <div class="my-2 col-md-6 col-lg-6 col-xl-3">
                             <label class="form-label"><span class="obrigatorio">*</span> Incluido por:</label>
                             <select class=" form-select form-select-sm " name="incluidoPor"
-                                aria-label="Default select example">
+                                aria-label="Default select example" required>
                                 <option value=""></option>
                                 <option value="Germano">Germano</option>
                                 <option value="Luana">Luana</option>
@@ -183,11 +187,11 @@
                     <th></th>
                     <th scope="col">Id</th>
                     <th scope="col">Produto</th>
-                    <th scope="col">Fornecedor</th>
-                    <th scope="col">Categoria</th>
+                    <th class="tab-fornecedor" scope="col">Fornecedor</th>
+                    <th class="tab-categoria" scope="col">Categoria</th>
                     <th scope="col">Quantidade</th>
                     <th scope="col">Unidade</th>
-                    <th scope="col">Validade</th>
+                    <th class="tab-validade" scope="col">Validade</th>
                     <th></th>
                 </tr>
 
@@ -195,17 +199,18 @@
                     <th scope="row"></th>
                     <td><span th:text="${produtos.id}"></span></td>
                     <td><span th:text="${produtos.produtoNome}"></span></td>
-                    <td><span th:text="${produtos.fornecedor}"></span></td>
-                    <td><span th:text="${produtos.categoria}"></span></td>
+                    <td class="tab-fornecedor"><span th:text="${produtos.fornecedor}"></span></td>
+                    <td class="tab-categoria"><span th:text="${produtos.categoria}"></span></td>
                     <td><span th:text="${produtos.qtdProduto}"></span></td>
                     <td><span th:text="${produtos.unidade}"></span></td>
-                    <td><span th:text="${produtos.validade}"></span></td>
+                    <td class="tab-validade"><span th:text="${produtos.validade}"></span></td>
                     <td class="buttons ">
-
-                        <button class="btn  btn-tbed"><a th:href="@{form/{id}(id=${produtos.id})}" th:method="get"><i
-                                    class="fa fa-pencil"></i></a></button>
-                        <button class="btn  btn-tbtr" data-bs-toggle="modal" data-bs-target="#exampleModal"><a><i
-                                    class="fa fa-trash"></i></a></button>
+                        <div class="botoes">
+                            <button class="btn  btn-tbed"><a th:href="@{form/{id}(id=${produtos.id})}"
+                                    th:method="get"><i class="fa fa-pencil"></i></a></button>
+                            <button class="btn  btn-tbtr" data-bs-toggle="modal" data-bs-target="#exampleModal"><a><i
+                                        class="fa fa-trash"></i></a></button>
+                        </div>
 
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">

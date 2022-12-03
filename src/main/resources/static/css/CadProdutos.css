@@ -109,3 +109,13 @@ p {
     align-items: center;
   }
 }
+@media (max-width: 580px){
+
+  .conTabela .tab-categoria, .tab-validade{
+    display: none;
+  }
+  .botoes{
+   display: flex;
+   flex-direction: row;
+  }
+}
