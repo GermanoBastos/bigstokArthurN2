@@ -22,9 +22,9 @@
     <!-- HEADER  -->
     <div class="header" th:fragment="navbar">
 
-        <nav class="navbar navbar-menu navbar-expand-lg navbar-light">
+        <nav class="navbar navbar-menu navbar-expand-lg navbar navbar-dark navbar-dark">
             <div class="container ">
-                <a class="navbar-brand mx-4" th:href="@{/}"><img src="img/Logo-BigStok-250x150.png " width="60%">
+                <a class="navbar-brand mx-4" th:href="@{/}"><img src="img/logo.png " width="60%">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -40,14 +40,18 @@
                             <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                                 aria-expanded="false">Cadastros</a>
                             <ul class="dropdown-menu text-center">
-                                <li><a class="dropdown-item" th:href="@{/fornecedores}" href="CadFornecedores.html">Fornecedores</a></li>
-                                <li><a class="dropdown-item" th:href="@{/produtos}" href="CadProdutos.html">Produtos</a></li>
-                                <li><a class="dropdown-item" th:href="@{/usuarios}" href="CadUsuarios.html">Usuários</a></li>
+                                <li><a class="dropdown-item" th:href="@{/fornecedores}"
+                                        href="CadFornecedores.html">Fornecedores</a></li>
+                                <li><a class="dropdown-item" th:href="@{/produtos}" href="CadProdutos.html">Produtos</a>
+                                </li>
+                                <li><a class="dropdown-item" th:href="@{/usuarios}" href="CadUsuarios.html">Usuários</a>
+                                </li>
                             </ul>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" th:href="@{/produtos}" href="CadProdutos.html">Entrada de
+                            <a class="nav-link active" aria-current="page" th:href="@{/produtos}"
+                                href="CadProdutos.html">Entrada de
                                 produtos</a>
                         </li>
                         <li class="nav-item">
@@ -86,11 +90,11 @@
                         </div>
                         <div class="my-2  col-lg-12 col-xl-3">
                             <label class="form-label">CNPJ:</label>
-                            <input class="form-control form-control-sm cnpj"  name="cnpj" type="text">
+                            <input class="form-control form-control-sm cnpj" name="cnpj" type="text">
                         </div>
                         <div class="my-2 col-lg-12 col-xl-3">
                             <label class="form-label">CPF:</label>
-                            <input class="form-control form-control-sm cpf"   name="cpf" type="text">
+                            <input class="form-control form-control-sm cpf" name="cpf" type="text">
                         </div>
 
                         <div class="my-2  col-lg-12 col-xl-6">
@@ -115,7 +119,7 @@
 
                         <div class="my-2  col-lg-12 col-xl-3">
                             <label class="form-label"><span class="obrigatorio">*</span> Telefone 1:</label>
-                            <input class="form-control form-control-sm telefone" type="text"  name="telefone1" required>
+                            <input class="form-control form-control-sm telefone" type="text" name="telefone1" required>
                         </div>
                         <div class="my-2  col-lg-12 col-xl-3">
                             <label class="form-label">Telefone 2:</label>
@@ -159,7 +163,7 @@
                     <th scope="col">CNPJ</th>
                     <th scope="col">CPF</th>
                     <th scope="col">Telefone 1</th>
-                    <th scope="col">Telefone 2</th>
+                    <th class="tab-telefone2" scope="col">Telefone 2</th>
                     <th></th>
                 </tr>
 
@@ -170,14 +174,15 @@
                     <td><span th:text="${fornecedores.cnpj}"></span></td>
                     <td><span th:text="${fornecedores.cpf}"></span></td>
                     <td><span th:text="${fornecedores.telefone1}"></span></td>
-                    <td><span th:text="${fornecedores.telefone2}"></span></td>
+                    <td class="tab-telefone2"><span th:text="${fornecedores.telefone2}"></span></td>
                     <td class="buttons ">
 
-                        <button class="btn  btn-tbed"><a th:href="@{form1/{id}(id=${fornecedores.id})}" th:method="get"><i
-                                    class="fa fa-pencil"></i></a></button>
-                        <button class="btn  btn-tbtr" data-bs-toggle="modal" data-bs-target="#exampleModal"><a><i
-                                    class="fa fa-trash"></i></a></button>
-
+                        <div class="botoes">
+                            <button class="btn  btn-tbed"><a th:href="@{form1/{id}(id=${fornecedores.id})}"
+                                    th:method="get"><i class="fa fa-pencil"></i></a></button>
+                            <button class="btn  btn-tbtr" data-bs-toggle="modal" data-bs-target="#exampleModal"><a><i
+                                        class="fa fa-trash"></i></a></button>
+                        </div>
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                             aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered ">
