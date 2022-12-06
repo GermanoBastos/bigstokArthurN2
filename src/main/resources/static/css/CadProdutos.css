@@ -77,6 +77,10 @@ body {
   background-repeat: no-repeat;
   
 }
+.botoes{
+display: flex;
+flex-direction: row;
+}
 
 .footer .navbar .navbar-brand {
   font-size: smaller;

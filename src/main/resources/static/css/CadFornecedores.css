@@ -122,3 +122,7 @@ p {
    flex-direction: row;
   }
 }
+.botoes{
+  display: flex;
+  flex-direction: row;
+  }
